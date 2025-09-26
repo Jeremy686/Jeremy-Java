@@ -8,14 +8,14 @@ and displays the date and time using thetoString() method, respectively.
 3. 对每个设置的“已流逝时间”，调用`toString()`方法，输出对应的日期和时间。
 
 import java.util.Date;
-public class Test
+public class DateTest
 {
     public static void main(String[] args)
     {
-        Date date = new Date();
-        long[]times =
+        Date date = new Date();                                              //创建对象
+        long[]times =                                                        //创建数组来储存那几个数字
                 {10000, 100000, 1000000, 10000000,
-                        100000000, 1000000000, 10000000000L, 100000000000L};
+                        100000000, 1000000000, 10000000000L, 100000000000L}; //加上L；防止数据过大溢出
         for (int i = 0; i < times.length; i++)
         {
             date.setTime(times[i]);
