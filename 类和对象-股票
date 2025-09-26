@@ -1,0 +1,50 @@
+Q2 Design a class named Stock that contains:
+•	A String data field named symbol for the stock’s symbol.
+•	A String data field named name for the stock’s name.
+•	A double data field named previousClosingPrice that stores the stock price for the previous day.
+•	A double data field named currentPrice that stores the stock price for the current time.
+•	A constructor that creates a stock with the specified symbol and name.
+•	A method named getChangePercent() that returns the percentage changed from previousClosingPrice to  currentPrice. 
+Draw the UML diagram for the class and then implement the class. Write a test program that creates a Stock object with the stock symbol ORCL, the name Oracle Corporation, and the previous closing price of 34.5. Set a new current price to 34.35 and display the price-change percentage.
+
+题目2：设计“股票”类（Stock）
+设计一个名为`Stock`的类，用于表示股票。该类需包含以下内容：
+- 一个`String`类型的成员变量`symbol`，表示股票代码。
+- 一个`String`类型的成员变量`name`，表示股票名称。
+- 一个`double`类型的成员变量`previousClosingPrice`，存储股票前一日的收盘价。
+- 一个`double`类型的成员变量`currentPrice`，存储股票当前的价格。
+- 一个带参构造方法，接收指定的股票代码和名称，创建对应的股票对象。
+- 一个名为`getChangePercent()`的方法，返回股票价格从“前一日收盘价”到“当前价格”的涨跌幅百分比（计算公式：`(当前价格 - 前一日收盘价) / 前一日收盘价 × 100%`）。
+ 要求
+1. 绘制该类的UML类图。
+2. 实现这个类。
+3. 编写测试程序：创建一个`Stock`对象，股票代码为`ORCL`、名称为`Oracle Corporation`、前一日收盘价为34.5；将当前价格设为34.35，输出该股票的价格涨跌幅百分比。
+
+
+
+public class StockTest
+{
+    public static void main(String[] args)
+         {
+             Stock stock1=new Stock("ORCL","Oracle Corporation");
+             stock1.previousClosingPrice = 34.5;
+             stock1.currentPrice = 34.35;
+             System.out.printf("%.2f%%\n", stock1.getChangePercent());
+         }
+}
+class Stock
+{
+    String symbol;
+    String name;
+    double previousClosingPrice;
+    double currentPrice;
+    Stock(String Newsymbol, String Newname)
+    {
+        symbol=Newsymbol;
+        name=Newname;
+    }
+    double getChangePercent()
+    {
+        return (currentPrice-previousClosingPrice)/previousClosingPrice*100;
+    }
+}
