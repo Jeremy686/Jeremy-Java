@@ -1,3 +1,12 @@
+Q3 (Use the Date class) Write a program that creates a  Date object, sets its elapsed time to 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000, and  100000000000,
+and displays the date and time using thetoString() method, respectively.
+
+题目3：使用Date类
+编写一个程序，完成以下操作：
+1. 创建一个`Date`类对象（`java.util.Date`）。
+2. 依次将该对象的“已流逝时间”（从1970年1月1日00:00:00 GMT开始计算的毫秒数）设置为：10000、100000、1000000、10000000、100000000、1000000000、10000000000、100000000000。
+3. 对每个设置的“已流逝时间”，调用`toString()`方法，输出对应的日期和时间。
+
 import java.util.Date;
 public class Test
 {
@@ -15,3 +24,9 @@ public class Test
         }
     }
 }
+
+Java中开数组：   数据类型[]数组名={...}
+
+setTime方法：将传入参数按照1970年1月1日为背景
+
+toString方法：将日期对象转化为字符串
