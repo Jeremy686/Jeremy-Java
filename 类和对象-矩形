@@ -1,0 +1,63 @@
+Q1 Design a class named Rectangle to represent a rectangle. The class contains:
+•	Two double data fields named width and height that specify the width and height of the rectangle. The default values are 1 for both width and height.
+•	A no-arg constructor that creates a default rectangle.
+•	A constructor that creates a rectangle with the specified width and height.
+•	A method named getArea() that returns the area of this rectangle.
+•	A method named getPerimeter() that returns the perimeter.
+Draw the UML diagram for the class and then implement the class. Write a test program that creates two Rectangle objects—one with width 4 and height 40 and the other with width 3.5 and height 35.9.  Display the width, height, area, and perimeter of each rectangle in this order.
+
+
+
+
+题目1：设计“矩形”类（Rectangle）
+设计一个名为`Rectangle`的类，用于表示矩形。该类需包含以下内容：
+- 两个`double`类型的成员变量`width`（宽）和`height`（高），分别表示矩形的宽和高，默认值均为1。
+- 一个无参构造方法，用于创建一个默认矩形（宽和高均为1）。
+- 一个带参构造方法，接收指定的宽和高，创建对应的矩形。
+- 一个名为`getArea()`的方法，返回该矩形的面积（面积 = 宽 × 高）。
+- 一个名为`getPerimeter()`的方法，返回该矩形的周长（周长 = 2 × (宽 + 高)）。
+要求
+1. 绘制该类的UML类图。
+2. 实现这个类。
+3. 编写测试程序：创建两个`Rectangle`对象，一个宽为4、高为40，另一个宽为3.5、高为35.9；按“宽 → 高 → 面积 → 周长”的顺序，分别输出两个矩形的信息。
+
+
+public class Test                                          //测试类
+{
+    public static void main(String[] args)
+    {
+        Rectangle rectangle1=new Rectangle(4,40);         //创建对象
+        System.out.println(rectangle1.width);
+        System.out.println(rectangle1.height);
+        System.out.printf("%.5f%n",rectangle1.getArea());
+        System.out.printf("%.5f%n",rectangle1.getPerimeter());
+
+        Rectangle rectangle2=new Rectangle(3.5,35.9);
+        System.out.println(rectangle2.width);
+        System.out.println(rectangle2.height);
+        System.out.printf("%.5f%n",rectangle2.getArea());
+        System.out.printf("%.5f%n",rectangle2.getPerimeter());
+    }
+}
+
+
+class Rectangle                                            //矩形
+{
+    double width=1.0,height=1.0;
+    Rectangle()                                            //无参构造函数
+    {
+    }
+    Rectangle(double newwidth,double newheight)            //有参构造函数
+    {
+        width=newwidth;
+        height=newheight;
+    }
+    double getArea()                                       //计算面积方法
+    {
+        return width*height;
+    }
+    double getPerimeter()                                  //计算周长方法
+    {
+        return 2*width+2*height;
+    }
+}
