@@ -1,0 +1,35 @@
+Q5 (Use the GregorianCalendar class) Java API has the GregorianCalendar class in the java.util package, which you can use to obtain the year, month, and day of a date. The no-arg constructor constructs an instance for the current date, and the methods get(GregorianCalendar.YEAR), get(GregorianCalendar.MONTH), and get(GregorianCalendar.DAY_OF_MONTH) return the year, month, and day.
+Write a program to perform two tasks:
+•	Display the current year, month, and day.
+•	The GregorianCalendar class has the setTimeInMillis(long) , which can be used to set a specified elapsed time since January 1, 1970. Set the value to 1234567898765L and display the year, month, and day.
+
+题目5：使用GregorianCalendar类
+Java的API中，`java.util`包下的`GregorianCalendar`类可用于获取日期的年、月、日信息。其中：
+- 无参构造方法会创建一个表示“当前日期”的对象。
+- 方法`get(GregorianCalendar.YEAR)`、`get(GregorianCalendar.MONTH)`、`get(GregorianCalendar.DAY_OF_MONTH)`分别返回年份、月份（注意：月份从0开始，0代表1月，11代表12月）、当月日期。
+
+编写一个程序，完成以下两个任务：
+1. 输出当前的年、月、日（需将月份转换为“1-12”的格式，例如：若`get`方法返回0，输出“1月”）。
+2. 使用`GregorianCalendar`类的`setTimeInMillis(long)`方法，将“已流逝时间”设为`1234567898765L`（毫秒数），并输出对应的年、月、日（同样转换月份格式）。
+
+import java.util.GregorianCalendar;
+public class Test
+{
+    public static void main(String[] args)
+    {
+        GregorianCalendar now = new GregorianCalendar();        //创建对象now，用来表示当前系统时间
+        int year1 = now.get(GregorianCalendar.YEAR);
+        int month1 = now.get(GregorianCalendar.MONTH) + 1;
+        int day1 = now.get(GregorianCalendar.DAY_OF_MONTH);
+
+        System.out.println(year1 + "年 " + month1 + "月 " + day1 + "日");
+
+        GregorianCalendar past = new GregorianCalendar();      //创建对象past，用来表示过去系统时间
+        past.setTimeInMillis(1234567898765L);                  //将 past 对象的时间设置为从 1970 年 1 月 1 日 00:00:00 GMT 起的 1234567898765 毫秒。
+        int year2 = past.get(GregorianCalendar.YEAR);
+        int month2 = past.get(GregorianCalendar.MONTH) + 1;
+        int day2 = past.get(GregorianCalendar.DAY_OF_MONTH);
+
+        System.out.println(year2 + "年 " + month2 + "月 " + day2 + "日");
+    }
+}
