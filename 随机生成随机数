@@ -1,0 +1,19 @@
+Q4 (Use the Random class) Write a program that creates a  Random object with seed 1000 and displays the first 50 random integers between  0 and  100 using the nextInt(100) method.
+
+题目4：使用Random类
+编写一个程序，完成以下操作：
+        1. 创建一个`Random`类对象（`java.util.Random`），并将其种子（seed）设置为1000。
+        2. 使用`nextInt(100)`方法，生成并输出前50个介于0（含）到100（不含）之间的随机整数。
+
+import java.util.Random;
+public class Test
+{
+    public static void main(String[] args)
+    {
+        Random random = new Random(1000);
+        for(int i=0; i<50; i++)
+        {
+            System.out.print(random.nextInt(100)+" ");
+        }
+    }
+}
